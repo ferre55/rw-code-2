@@ -1,11 +1,15 @@
-var formulario = document.querySelector("#form")
+// FIXED: Cambiar form to . formulario 
+var formulario = document.querySelector(".formulario")
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  // FIXED: Cambiar metodo de e.prevent(); a e.preventDefault();
+  e.preventDefault();
+  
   
   var n = formulario.elements[0]
-  var e = formulario.elements[1]
+  // FIXED: Cambiar nombre de variable para que no se repita
+  var edad_entrada = formulario.elements[1]
   var na = formulario.elements[2]
 
   var nombre = n.value
@@ -35,7 +39,8 @@ botonBorrar.textContent = "Eliminar invitado"
 botonBorrar.id = "boton-borrar"
 var corteLinea = document.createElement("br")
 document.body.appendChild(corteLinea)
-document.body.appendChild(botonBorrar);
+// FIXED: Eliminar document.body.appendChild(botonBorrar);
+
 
 function agregarInvitado(nombre, edad, nacionalidad) {
 
@@ -55,7 +60,8 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+// FIXED: Cambiar metodo added a add
+elementoLista.classList.add("elemento-lista")
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
